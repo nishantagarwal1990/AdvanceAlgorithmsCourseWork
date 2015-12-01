@@ -1,0 +1,526 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 SEP 2015 23:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**1-recurrence.tex
+(./1-recurrence.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./exam.cls
+Document Class: exam 2011/05/22 Version 2.4 by Philip Hirschhorn
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\@extrawidth=\skip43
+\@rightmargin=\skip44
+\@extrahead=\skip45
+\@extrafoot=\skip46
+\run@exhd=\skip47
+\fp@exhd=\skip48
+\run@exft=\skip49
+\fp@exft=\skip50
+\covrun@exhd=\skip51
+\covfp@exhd=\skip52
+\covrun@exft=\skip53
+\covfp@exft=\skip54
+\c@num@coverpages=\count87
+\c@latest@ques=\count88
+\c@ques@end=\count89
+\c@last@object=\count90
+\c@incmp@ques=\count91
+\c@next@ques=\count92
+\c@nextq@page=\count93
+\c@tmp@hlfcntr=\count94
+\c@ifpos@cntr=\count95
+\c@question=\count96
+\c@partno=\count97
+\c@subpart=\count98
+\c@subsubpart=\count99
+\c@choice=\count100
+\c@numpoints=\count101
+\c@numbonuspoints=\count102
+\c@pointsof@thisquestion=\count103
+\c@bonuspointsof@thisquestion=\count104
+\c@numquestions=\count105
+\c@numparts=\count106
+\c@numsubparts=\count107
+\c@numsubsubparts=\count108
+\c@Curr@Page=\count109
+\c@@pagepoints=\count110
+\c@@pagebonuspoints=\count111
+\c@pageof@pagepoints=\count112
+\c@pageof@pagebonuspoints=\count113
+\c@latest@points=\count114
+\c@latest@bonuspoints=\count115
+\pageinfo@commands=\toks14
+\temp@toks=\toks15
+\pagepoint@commands=\toks16
+\point@toks=\toks17
+\c@ques@object=\count116
+\marginpointssep=\skip55
+\rightpointsmargin=\skip56
+\choice@toks=\toks18
+\answerlinelength=\skip57
+\answerskip=\skip58
+\answerclearance=\skip59
+\linefillheight=\skip60
+\linefillthickness=\skip61
+\dottedlinefillheight=\skip62
+\minboxheight=\skip63
+\c@@iterator=\count117
+\@cellwidth=\skip64
+\c@tbl@points=\count118
+\c@tbl@bonuspoints=\count119
+\c@num@cols=\count120
+\saved@totalleftmargin=\dimen103
+\@sollistdepth=\count121
+\FrameRule=\dimen104
+\FrameSep=\dimen105
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip65
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen106
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count122
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count123
+\leftroot@=\count124
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count125
+\DOTSCASE@=\count126
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count127
+\c@MaxMatrixCols=\count128
+\dotsspace@=\muskip11
+\c@parentequation=\count129
+\dspbrk@lvl=\count130
+\tag@help=\toks20
+\row@=\count131
+\column@=\count132
+\maxfields@=\count133
+\andhelp@=\toks21
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks22
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip68
+\thm@postskip=\skip69
+\thm@headsep=\skip70
+\dth@everypar=\toks29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks30
+\labelindent=\skip71
+\enit@outerparindent=\dimen115
+\enit@toks=\toks31
+\enit@inbox=\box28
+\enitdp@description=\count134
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks32
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count135
+))
+\Gin@req@height=\dimen116
+\Gin@req@width=\dimen117
+)
+(./1-recurrence.aux)
+\openout1 = `1-recurrence.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count136
+\scratchdimen=\dimen118
+\scratchbox=\box29
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen119
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks34
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+
+LaTeX Warning: No \author given.
+
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 87--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--200
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+
+ []
+
+
+Underfull \vbox (badness 3525) detected at line 285
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Overfull \hbox (8.77399pt too wide) in paragraph at lines 310--311
+[]\OT1/cmr/m/it/10 Understood sim-i-lar so-lu-tion on $\OML/cmm/m/it/10 http \O
+T1/cmr/m/n/10 : \OML/cmm/m/it/10 ==www:cc:gatech:edu= []mihail=\OT1/cmr/m/n/10 
+2\OML/cmm/m/it/10 IND[]Luby[]Widgerson:pdf$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
+
+ []
+
+
+Overfull \hbox (27.84657pt too wide) in paragraph at lines 383--383
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
+
+ []
+
+[7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+[11]
+This exam contains 5 questions with 18 parts, 0 subparts, and 0 subsubparts.
+This exam has a total of 50 points.
+This exam has a total of 0 bonus points.
+(./1-recurrence.aux) ) 
+Here is how much of TeX's memory you used:
+ 3571 strings out of 493089
+ 48885 string characters out of 6134842
+ 166360 words of memory out of 5000000
+ 7026 multiletter control sequences out of 15000+600000
+ 9323 words of font info for 34 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,15n,23p,368b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 1-recurrence.pdf (11 pages, 196121 bytes).
+PDF statistics:
+ 96 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

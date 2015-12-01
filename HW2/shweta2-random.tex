@@ -1,0 +1,379 @@
+\documentclass[addpoints]{exam}
+\usepackage{amsmath,amsthm,amssymb}
+
+\newtheorem{lemma}{Lemma}[section]
+\newcommand{\var}{\text{Var}}
+\title{CS 6150: HW2}
+\date{Due Date: Oct 1}
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+This assignment has \numquestions\ questions, for a total of \numpoints\
+points. 
+Unless otherwise specified, complete and reasoned arguments will be expected for all answers. }}}
+\end{center}
+
+\qformat{Question \thequestion: \thequestiontitle\dotfill \textbf{[\totalpoints]}}
+\pointname{}
+\bonuspointname{}
+\pointformat{[\bfseries\thepoints]}
+
+\printanswers
+
+\begin{center}
+  \gradetable
+\end{center}
+\newpage
+
+Here are the three increasingly-strong inequalities we use to analyze the tail
+of a distribution. 
+
+\begin{lemma}[Markov]
+  Let $X$ be a random variable taking nonnegative values. Then for any $a > 0$,
+\[ \Pr(X \ge a) \le \frac{E[X]}{a} \]
+\end{lemma}
+
+\begin{lemma}[Chebyshev]
+  Let $X$ be a random variable with bounded variance. Then 
+\[ \Pr(|X - E[X]| \ge a) \le \frac{\var[X]}{a^2} \]
+\end{lemma}
+\begin{lemma}[Chernoff]
+  Let $X_1, \ldots, X_n$ be independent random variables taking the values $0, 1$ with $E[X_i] =
+  \Pr(X_i = 1) = p_i$. Let $\mu = \sum_i p_i$. Then for any $\delta > 0$, 
+\[ \Pr(X \ge \mu(1+\delta)) \le \exp( - \frac{\mu \delta^2}{3}) \]
+\[ \Pr(X \le \mu(1-\delta)) \le \exp( - \frac{\mu \delta^2}{2}) \]
+\end{lemma}
+\begin{questions}
+\titledquestion{Tail Bounds I}
+\begin{parts}
+  \part[5] The Markov inequality yields an \emph{upper} bound on the probability
+  of going far away from the mean. It is reasonable to ask whether we can do
+  better. Show that you can't, by constructing some nonnegative random variable
+  $X$ and a value $a > 0$ such that 
+\[ \Pr(X \ge a) = \frac{E[X]}{a} \]
+\begin{solution}
+	Let my sample space is $S = \{1,2,3,4,5,6,7,8,9,10\}$ \\
+\[E(X) = \sum_{i=1}^{10}\Pr(i)*i = 5.5\]	
+	Therefore according to Markov's inequality:
+    \[\Pr(X\ge a\mu) \le \frac{1}{a}\] for $a \textgreater 0$,	let's $a=1$
+          \[\Pr(X\ge a\mu) \le \frac{1}{a}\]
+	      \[\Pr(X\ge 1*5.5) \le \frac{1}{1}\]
+	      \[\Pr(X\ge 5.5) \le 1\]
+	    
+     Here, we can say that probability of anything can never be \textgreater $1$\\
+     Hence, I can not do better than Markov's inequality
+\end{solution}	
+
+  \part[5] Suppose we roll a fair die $100$ times. Determine the probability
+  that the sum of the rolls is at least  $400$ (using Markov's inequality) and
+  the probability it is
+  not in the range $[301,399]$ (using Chebyshev's inequality).
+  \begin{solution}
+  \[E(X) = \sum_{i=1}^{100}\Pr(X=i)*i =
+  \sum_{i=1}^{100}\frac{1}{100}i = 350\]	
+  \[Var(X) = E(X^2)-E(X)^2\]
+  \[Var(X) = \sum_{i=1}^{6}i^2*\frac{1}{6}-(\frac{1}{6})^2\]
+  \[Var(X) = \frac{35}{12}\]
+  	Using Markov's inequality:
+  	\[\Pr(X\ge 400) \le \frac{350}{400}\]
+  	\[\Pr(X\ge 400)\le \frac{7}{8}\]
+  	
+  	Using Chebyshev's inequality:
+  \[ \Pr(|X - E[X]| \ge a) \le \frac{\var[X]}{a^2} \]
+  \[\Pr(|X - 350| \ge 50) \le \frac{100*\frac{35}{12}}{50^2}\]	
+  \[\Pr(|X - 350| \ge 50) \le \frac{7}{60} \]	
+  \end{solution}
+
+  \part[5] Suppose we're given an algorithm that takes as input a string of $n$
+  bits. We are told that the expected running time is $O(n^2)$ if the bits are
+  chosen independently and uniformly at random. What can we say about the
+  \emph{worst-case} behavior of the algorithm on inputs of size $n$ (using
+  Markov's inequality). 
+  \begin{solution}
+  	X is a random variable which shows the running time of the algorithm. We have given that expected running time of the algorithm is $O(n^2)$. 
+  	$E[X] = c(n^2)$ where $t$ is a constant $\textgreater 0$\\
+  	Let $a = 2c$\\
+  	\[\Pr(X \ge a) \le \frac{cn^2}{a}\]
+  	$\frac{c}{a}$ is constant, 
+  	therefore our worst case of the algorithm will always be $O(n^2)$
+  \end{solution}
+  \part[5] We prove Chebyshev's inequality by applying Markov's inequality to
+  the positive random variable $Y = (X - E[X])^2$. Can you generalize
+  Chebyshev's inequality to higher moments of $X$ (i.e values $E[X^k]$ for large
+  $k$). In particular, set $k > 2$ to be some \textbf{even} number and derive a
+  Chebyshev-like bound for the tail. What do you notice about such a bound ? 
+  \begin{solution}
+  	The proof of Chebyshev's inequality using Markov's inequality for positive random variable $Y = (X - E[X])^2$
+	  
+	Markov's inequality:
+	\[ \Pr(Y \ge a) \le \frac{E[Y]}{a} \]
+	\[ \Pr((X-E(X))^2 \ge a^2) \le \frac{E[(E-E(X))^2]}{a^2} \]
+	\[ \Pr((X-E(X))^2 \ge a^2) \le \frac{Var(X)}{a^2} \]
+	Taking square root of the equation:
+	\[ \Pr(|(X-E(X))| \ge a) \le \frac{\sqrt{Var(X)}}{a} \] 
+	
+	The proof of Chebyshev for higher moments is almost exactly the same as the one above. The only observation we make is that \[(X-E(X))^{2n}\] is always positive for any n.
+	In our case, n = k/2, so \[(X-E(X)^k\] will give the higher moments of X being k with any even number.
+	From above equation of 2 as higher moments, we can derive :
+	\[ \Pr(|(X-E(X))| \ge \sqrt[k]{a}) \le \frac{\sqrt[k]{Var(X)}}{\sqrt[k]{a}} \le \sqrt[k]{a} \]				
+	
+	We deduce that as your higher moments will increase, your probability being diverted from your mean will decrease exponentially.
+			
+  \end{solution}
+\end{parts}
+\titledquestion{Tail Bounds II}
+\begin{parts}
+  \part[5] Repeat the Chebyshev analysis for the fair die above but using a Chernoff bound
+  instead. Since your random variables are now not $0-1$, you will need a
+  slightly different version of the Chernoff bound called a Hoeffding bound: 
+  \begin{lemma}[Hoeffding]
+    Let $X_1, \ldots, X_n$ be independent random variables where $a_i \le X_i
+    \le b_i$. Let $S = \sum X_i$. Then 
+\[ \Pr(|S - E[S]| \ge t) \le 2\exp(- \frac{2t^2}{\sum_i (b_i - a_i)^2}) \]
+  \end{lemma}
+\begin{solution}
+	As per above Chebyshev analysis, t = 50, and our variable $1 \ge X\sc{i} \le 6$ for fair dice.
+	Implementing Hoeffding,
+	\[ \Pr(|S - 350| \ge 50) \le 2\exp(- \frac{2 *50^2}{\sum_{i=1}^{100} (6 - 1)^2}) \]
+	\[ \Pr(|S - 350| \ge 50) \le 2\exp^{-2} \]
+\end{solution}
+  \part[10] Suppose you toss $2n$ fair coins and compute the difference between
+  the number of heads and tails. On average, this difference is zero. But what
+  is the probability that the difference is more than $t$ ? (\textbf{Hint:}
+  Consider just the number of heads). 
+\begin{solution}
+	
+\end{solution}
+\end{parts}
+
+\titledquestion{Medians}[10]
+We saw in class that taking a median of three samples suffices to obtain a good
+approximation to the rank of the median. Assume that our goal is to return an
+element whose with rank $r$ such that $|r - n/2| \le \epsilon n/2$. Assume also
+that we desire this result with probability $1-\delta$. 
+
+We can take a sample of size $t$ and select the median as our result. What
+value of $t$ must we pick (as a function of $\epsilon, \delta$ and $n$) ? Do you
+notice something interesting/unusual ? 
+
+\begin{solution}
+	
+\end{solution}
+
+\titledquestion{Amplification}
+
+  Consider a decision problem $f$ (i.e one where the output is either zero or
+  one). Suppose we are given a randomized algorithm $A$ that on input $x$ has
+  the following properties:
+  \begin{itemize}
+  \item If $f(x) = 0$, then $A(x) = 0$
+  \item If $f(x) = 1$, then $A(x) = 1$ with probability at least $2/3$.
+  \end{itemize}
+  Such an algorithm is said to have \emph{one-sided error}, and as we've
+  discussed in class we can amplify the probability of being correct merely by
+  repeating it a number of times, and returning $1$ if we ever see a $1$,
+  returning $0$ otherwise.
+
+  But suppose our algorithm instead had the following properties:
+  \begin{itemize}
+  \item If $f(x) = 0$, then $A(x) = 0$ with probability at least $2/3$
+  \item If $f(x) = 1$, then $A(x) = 1$ with probability at least $2/3$.
+  \end{itemize}
+  In other words, it has \emph{two-sided} error rather than one-sided error.
+  \begin{parts}
+    \part[5] What is the probability of success (in either case) if we implement
+    the above procedure (returning a $1$ if we ever see a $1$, else returning a
+    zero) after $k$ iterations ?
+    \begin{solution}
+    	
+    \end{solution}
+    \part[5] What is the probability of success (in either case) of the
+    following procedure: Run the algorithm $k$ times and return the majority
+    answer.
+    \begin{solution}
+    	
+    \end{solution}
+  \end{parts}
+
+\titledquestion{The ``median'' trick}
+
+Suppose we have an algorithm that generates independent samples $X_1,
+\ldots$ of a random variable $X$. A natural estimate of the value of $X$ is the
+mean $S = \sum_{i=1}^t X_i/t$ for some value of $t$. What is the probability
+that $S$ is close to $E[X]$ ? Specifically, what is the probability that $|S -
+E[X]| \le \epsilon E[X]$ ? 
+
+We can analyze this if we know that $\var[X]$ is bounded. In particular, set $r
+= \sqrt{\var[X]}/E[X]$. 
+
+\begin{parts}
+  \part[5] Show that if we set $t = O(r^2/\epsilon^2\delta)$ then the
+  probability is at least $1-\delta$ (or in other words the probability of the
+  difference \emph{exceeding} $\epsilon E[X]$ is at most $\delta$). 
+  \begin{solution}
+  	 $|S - E[X]| \le \epsilon E[X]$
+  	 The problem with above equation is the mixed variable, but we have given that $S = \sum_{i=1}^t X_i/t$, 
+  	 Taking Expectation on both sides, 
+  	 \[E(S) = E(\sum_{i=1}^t X_i/t)\]
+ 	 Using linearity property of expectation, it can be written as, 
+ 	 \[E(S) = \sum_{i=1}^t E(X_i/t)\]
+ 	 \[E(S) = \frac{1}{t}\sum_{i=1}^t E(X_i)\]
+  	 \[E(S) = \frac{1}{t}E(X)*t= E(X)\]
+  	 
+Taking Variance of  $S = \sum_{i=1}^t X_i/t$
+\[Var(S) = Var(\sum_{i=1}^t X_i/t)\]
+\[Var(S) = \frac{1}{t^2}Var(\sum_{i=1}^t X_i)\]
+\[Var(S) = \frac{t}{t^2}Var(X)\]
+\[Var(S) = \frac{1}{t}Var(X)\]
+
+Using Chebyshev's inequality:
+\[\Pr(|S-E(S)|\ge \epsilon E(S)) \le \frac{Var(S)}{\epsilon^2 E(S)^2}\]
+\[\Pr(|S-E(S)|\ge \epsilon E(S)) \le \frac{\frac{Var(X)}{t}}{\epsilon^2 E(X)^2}\]
+\[r = \frac{\sqrt{Var(X)}}{E(X)}\]
+
+\[\Pr(|S-E(S)|\ge \epsilon E(S)) \le \frac{r^2}{t \epsilon^2}\]
+\[\Pr(|S-E(S)|\ge \epsilon E(S)) = \delta\]
+
+\[\delta \le \frac{r^2}{t \epsilon^2}\]
+\[t \le \frac{r^2}{\delta \epsilon^2}\]
+\[t = O\left(\frac{r^2}{\delta \epsilon^2}\right)\]
+
+  \end{solution}
+\part[2] Suppose we only want a \emph{weak estimate}: an estimate $\tilde{X}$
+that is within $\epsilon E[X]$  with probability $2/3$. Show that in this case
+we need only set $t = O(r^2/\epsilon^2)$. 
+\begin{solution}
+	Considering part a, for t weak estimation the probability is at least $1-\delta = \frac{2}{3}$
+	Therefore, $\delta = \frac{1}{3}$
+	Using earlier derived relation of t, we can write \[t = c \left(\frac{r^2}{\delta \epsilon^2}\right) =  3c \left(\frac{r^2}{\epsilon^2}\right)\]
+	\[t = O\left(\frac{r^2}{\epsilon^2}\right)\]
+\end{solution}
+\part[8] Now take the \emph{median} of $O(\log(1/\delta))$ such weak
+estimates. Prove that this estimator does have the desired property of being
+within $\epsilon E[X]$ of the true estimate with probability $1-\delta$. Note
+that we have done two things. 
+\begin{enumerate}
+\item We've reduced the number of samples needed from $r^2/\epsilon^2\delta$ to
+  $r^2\log(1/\delta)/\epsilon^2$, which is an exponential reduction in
+  dependence on $1/\delta$. 
+\item We've achieved a strong bound without using full Chernoff-like
+  assumptions: we only needed $X$ to have bounded variance. 
+\end{enumerate}
+\begin{solution}
+	We have given an algorithm A which estimates in correct range of $\epsilon$ with probability $\ge \frac{2}{3}$. Our new algorithm A' will output in range of $\epsilon$ with probability $1-\delta$
+	In our case, repeating A for $m = O(log(\frac{1}{\delta}))$ times. Then, taking the median of all the m answers. Now, we need to provide the correctness of above algorithm.
+	
+	Using Linearity of expectation, $E(\mu) = E(X\sc i) \frac{2}{3}$, so our new algorithm A' is correct when $\sum_{i}^{} X\sc i \textgreater \frac{m}{2}$, it means if more than half of the trials of A are correct, then A' is also correct.
+	
+	\[\Pr(|S \le \frac{m}{2}|) \le \Pr(S \le \frac{2}{3}E(S))\]
+	\[\Pr(|S \le (1-\frac{1}{3})E(S))\]
+	Applying, Chernoff's inequality:
+	\[\le \exp^{\frac{E(S)}{18}} \le \exp^{\frac{m}{24}} \le \delta \]
+Whenever,\[m \ge 24\ln\left(\frac{1}{\delta}\right)\]
+		
+	\emph{http://www.cse.buffalo.edu/~hungngo/classes/2008/694/notes/handout3.pdf}\\
+	\emph{http://sublinear.wikischolars.columbia.edu/file/view/scribe2.pdf/559024365/scribe2.pdf}
+\end{solution}
+
+\end{parts}
+
+\titledquestion{Hashing with open addressing}
+We've seen how to use random hash function to ensure only a small number of
+collisions in a hash bucket. We stored the overflow items in a \emph{chain},
+which is why we wanted to minimize its length. Such a hashing scheme is called
+\emph{chaining}. 
+
+An alternate approach to hashing is called \emph{open addressing}. Suppose we
+want to store $n$ items in an array. We maintain an array of $2n$ slots, and
+also construct a hash function $h : U \times {\mathbb Z} \rightarrow [1\ldots
+2n]$. For each key $k$, the sequence $h(k, 0), h(k, 1), \ldots$ defines a
+\emph{probe sequence} as follows. 
+
+\begin{itemize}
+\item When $k$ appear, the algorithm first tries to place it in $h(k,0)$. If
+  that entry is full, it tries $h(k, 1)$. If that is full, it tries $h(k, 2)$
+  and so on.
+
+\item   When searching for an item $q$, we search the entries
+  $h(q, i), i = 0, 1, \ldots$ until we either find $q$ or find an empty spot
+  (which means that $q$ was never in the set).
+\end{itemize}
+
+Assume that $h(k, j)$ is uniform over $[1\ldots 2n]$ for any $k$ and that all
+$h(k, i)$ are independent. 
+
+\begin{parts}
+  \part[5] Show that the probability an insertion takes more than $r$ steps is
+  at most $2^{-r}$. 
+  \begin{solution}
+  	
+  \end{solution}
+\part[5] Show that for the $i^{\text{th}}$ insertion ($i = 1, 2, \ldots, n)$, the
+  probability that more than $2\log n$ probes are needed is $1/n^2$. 
+  \begin{solution}
+  	
+  \end{solution}
+\part[5] Let $X_i$ be the number of probes needed to insert item $i$, and let $X
+= \max X_i$. Show that $\Pr(X > 2 \log n) \le 1/n$. 
+\begin{solution}
+	
+\end{solution}
+\end{parts}
+
+\titledquestion{Derandomizing MAX CUT}
+
+While randomness is an easy way to design an algorithm, random bits are an
+expensive resource, and we'd like to use as few of them as possible. The process
+of removing randomness from an algorithm is called \emph{derandomization}. There
+are three basic approaches to derandomization: using weak randomness,
+eliminating randomess by brute force, and the method of conditional
+expectations. We will examine the latter two methods here. 
+\begin{parts}
+  \part[5] Suppose we have a randomized algorithm that runs in time $T(n)$, 
+  uses $O(\log n)$ random bits and returns the minimum of some function with a
+  probability of success greater than $2/3$.  Construct a deterministic algorithm that solves
+  the same problem correctly in time $T'(n)$, expressed in terms of $T(n)$ and $n$
+  (\textbf{Hint:} this is called the method of brute force). 
+
+  The other approach works as follows. Suppose our randomized algorithm $A$ produces
+  some answer whose expectation is $\mu$. We can imagine the algorithm as a
+  sequence of deterministic operations punctuated by coin tosses $r_1, r_2,
+  \ldots, r_m$. The value output by $A$ is a function of the input and these
+  coin tosses: ignoring the input, we can write the output value as $A(r_1,
+  \ldots, r_m)$, and so $E[A(r_1, \ldots, r_m)] = \mu$
+
+  Consider the first coin toss $r_1$. We can write 
+\[ E[A(r_1, \ldots, r_m)] = (1/2)E[A(0, r_2, \ldots, r_m)] + (1/2)E[A(1, r_2,
+\ldots, r_m)] \]
+This is because the probability of $r_1 = 1$ is $1/2$. Notice however that one
+of the two expectations $E_0 = E[A(0, r_2, \ldots, r_m)]$ and $E_1 = E[A(1, r_2,
+\ldots, r_m)]$ must be at least as large as $\mu$ (since $\mu = (E_0 +
+E_1)/2$). Suppose we can compute these two numbers. Then we can
+\emph{deterministically} pick the value of $r_1$ and we are sure that the final
+answer we get is no worse than the expected value, while having used one less
+random bit. 
+
+Repeating this over and over again yields a final result in which all bits are
+picked deterministically, and yet the final answer is at least as large as
+$\mu$. Thus, we've derandomized the algorithm without paying a penalty. The catch is of course the estimation of $E_0$ and $E_1$. 
+
+Now consider the randomized algorithm for MAX CUT that yields a
+$0.5$-approximation: Pick a vertex and label it as being black or white with
+equal probability. Repeat for all vertices, and return the partition into black
+and white as the desired cut. 
+
+\begin{solution}
+	
+\end{solution}
+\part[10] Derandomize this algorithm using the method of conditional
+expectations. What is the resulting deterministic algorithm ? (\textbf{Hint:}
+think about how we might deterministically decide which color to give to a
+vertex based on the graph structure and how it influences $E_0, E_1$.)
+\begin{solution}
+	
+\end{solution}
+\end{parts}
+
+\end{questions}
+\end{document}
