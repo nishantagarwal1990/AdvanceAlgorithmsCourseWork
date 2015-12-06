@@ -1,0 +1,139 @@
+\documentclass[addpoints]{exam}
+\usepackage{amsmath,amsthm,amssymb,url}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[pdftex]{hyperref}
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newcommand{\var}{\text{Var}}
+\title{CS 6150: HW4}
+\date{Due Date: }
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+This assignment has \numquestions\ questions, for a total of \numpoints\
+points.
+Unless otherwise specified, complete and reasoned arguments will be
+expected for all answers. 
+}}}
+\end{center}
+
+\qformat{Question \thequestion: \thequestiontitle\dotfill \textbf{[\totalpoints]}}
+\pointname{}
+\bonuspointname{}
+\pointformat{[\bfseries\thepoints]}
+
+\printanswers
+
+\begin{center}
+  \gradetable
+\end{center}
+\newpage
+
+
+
+\begin{questions}
+
+\titledquestion{Integer programs}
+Write down integer programs for the following problems.
+\begin{parts}
+  \part[10] Let $U$ be a set, and let $\mathcal{C} = \{S_1, \ldots, S_n\}$ be a
+  collection of subsets of $U$. Each set $S$ has a weight $w_S$. Find a subcollection $\mathcal{C}' \subset
+\mathcal{C}$ of minimum total weight ($w(\mathcal{C}') = \sum_{S \in
+  \mathcal{C}'} w_S$) such that the sets in $\mathcal{C}'$
+\emph{cover} $U$: i.e
+\[ \cup_{S \in \mathcal{C}'} S = U \]
+\part[10] Let $U$ be a universe, and let $\mathcal{C} = \{S_1, \ldots, S_n\}$ be a
+  collection of subsets of $U$. Each element $u \in U$ has a weight $w_u$. Find
+  a subset $H \subset U$ of minimum total weight ($w(H) = \sum_{u \in H} w_u$) such that each set
+  in $\mathcal{C}$ is \emph{hit} by $H$: i.e
+\[ \forall S \in \mathcal{C}, H \cap S \ne \emptyset \]
+\end{parts}
+
+\titledquestion{LP duals}
+\begin{parts}
+  \part[10] Consider the linear program 
+  \begin{align*}
+    \max\qquad & 5x + 3y - 2z \\
+    \text{such that}\quad     & 3x - 2y \le 6 \\
+         & 4y + 2z \le 7 \\
+         & -3x + 2z \le 3
+  \end{align*}
+Write down the dual of this LP. 
+\part[10] Write down the dual of the linear program obtained by relaxing the
+integer program from Question 1(b) above. 
+\end{parts}
+
+\titledquestion{Max cardinality matching}
+\begin{parts}
+  \part[10] Write down a linear program for computing a maximum cardinality
+  matching in a bipartite graph. Your linear program will have one variable for
+  each edge. 
+\part[10] Write down the dual of this LP. What well known problem does it
+capture ? 
+\end{parts}
+
+
+\titledquestion{Generalized Duals}[20]
+
+We've seen that any linear program can be written in the canonical form 
+\begin{align*}
+  \max \qquad & c^\top x \\
+  \text{such that} \quad & Ax \le b \\
+  & x \ge 0
+\end{align*}
+
+which gives rise to the corresponding dual
+\begin{align*}
+  \min \qquad & y^\top b \\
+  \text{such that} \quad & y^\top A \ge c \\
+  & y \ge 0
+\end{align*}
+It turns out that first transforming a general linear program with equality and
+$\ge$ constraints into canonical form, and then writing the dual, can be a
+little inconvenient, and that it's easier to write the dual directly. 
+
+But what would this dual look like ? Let's take a general linear program that
+looks like this: 
+
+\begin{align*}
+\max \qquad & ax + by + cz \\
+\text{such that} \quad & Ax + By + Cz \le d \\
+& Dx + Ey + Fz = e \\
+& Gx + Hy + Iz \ge f \\
+& x \ge 0, z \le 0
+\end{align*}
+
+Note that $x, y, z$ are \emph{vectors} and $y$ is unconstrained (i.e the
+coordinates of $y$ could be more or less than zero). 
+
+Write down the dual of this linear program. You will do this by first
+transforming this into the canonical setting, writing the canonical dual, and
+then rewriting the dual in simplified form. It will help to remember that if $a$
+and $b$ are two variables that are both greater than zero, then $a-b$ represents
+a variable that could be either more or less than zero. 
+
+Do you notice any pattern in the relation between primal constraint and dual
+variables (and vice versa) ? 
+\titledquestion{Best fit line}[20]
+\emph{this is question 7(b) from the Erickson notes on LPs}
+
+You are given $n$ points $(x_i, y_i)$ in the plane, and you wish to find a line
+of \emph{best fit}. But instead of the standard squared error norm, you will be
+using the $\ell_1$ error: namely, for any given line $y = ax + b$, the error is
+given by 
+\[ \epsilon_1(a, b) = \sum_{i=1}^n |y_i - (ax_i + b)|. \]
+Write down a linear program to find a line that minimizes $\epsilon_1$. 
+\end{questions}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
